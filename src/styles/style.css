@@ -1,0 +1,286 @@
+*,
+::after,
+::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fondoHeader: #41424bde;
+    --colorGray: rgba(70, 73, 77, 0.411);
+    --colorHover: rgba(12, 29, 51, 0.719);
+    --textColor: whitesmoke;
+    --colorButton: rgb(12, 175, 204);
+    --shadow: rgba(0, 0, 0, 0.87);
+}
+
+body {
+    background-image: url("../assets/img/clouds.jpg");
+    background-size: cover;
+    font-family: 'Murecho', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.header > div {
+    flex: 1;
+    padding-block: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--fondoHeader);
+    color: var(--textColor);
+    box-shadow: 0px 0px 10px var(--shadow);
+}
+
+.header__title {
+   text-align: center;
+   font-weight: 400;
+   order: 2;
+}
+
+.form {
+    min-width: 300px;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form .form__input {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.form .form__input .form__input-text {
+    outline: none;
+    padding: 5px;
+    font-family: 'Murecho', sans-serif;
+}
+
+.form .form__input .form__input-submit {
+    background-color: var(--colorButton);
+    border: none;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--textColor);
+    font-family: 'Murecho', sans-serif;
+}
+
+.form .form__input .form__input-submit:hover {
+    transition: 0.2s ease-in;
+    background-color: var(--colorHover);
+    color: var(--textColor);
+}
+
+main {
+    flex: 10;
+}
+
+.loader {
+    display: grid;
+    place-items: center;
+}
+
+.loader .loader__image {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    display: none;
+}
+
+.section {
+    margin: 30px 10px 10px 10px;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.section > * {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px var(--shadow);
+}
+
+
+.section--principal {
+    backdrop-filter: blur(100px);
+    display: grid;
+    grid-row-end: span 2;
+
+}
+.section--principal .section__information {
+    width: 100%;
+}
+.section--principal .section__information .climactual__iformacion-dos { 
+    display: flex;
+    flex-direction: column;
+}
+.section--principal .section__information > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section--principal .section__information .climactual__iformacion-dos > div {
+    display:flex;  
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+
+.section--secundario {
+    backdrop-filter: blur(100px);
+    display: grid;
+    grid-template-columns: 0fr 10fr 0fr;
+    overflow: hidden;
+}
+.section--secundario .section__information {
+    margin-bottom: 20px;
+}
+.section--secundario .section__button {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    background-color: var(--colorGray);
+    border: none;
+}
+.section--secundario .section__button:hover {
+    transition: 0.2s ease-in;
+    background-color: var(--colorHover);
+}
+.section--secundario button[disabled] {
+    color: rgba(8, 8, 8, 0.123);
+    cursor: no-drop;
+}
+.section--secundario button[disabled]:hover {
+    background-color: var(--colorGray);
+}
+.section--secundario .section__information 
+> div {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    align-items: center; 
+    gap: 10px 
+}
+.section--secundario .section__information figure {
+    display: flex; 
+    align-items: center; 
+}
+
+
+.section--terceario {
+    backdrop-filter: blur(100px);
+}
+.section--terceario .section__information {
+    width: 100%;
+    padding: 10px;
+}
+.section--terceario .section__information .informacion > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.footer {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+@media (max-width: 1020px) {
+
+    .header > div {
+        flex-direction: column;
+    }
+
+    .header__title {
+        order: 1;
+    }
+
+    .section--principal {
+        display: flex;
+        align-items: center;
+    }
+    .section--principal .section__information .climactual__iformacion-dos {
+        align-items: center;
+    }
+    .section--principal .section__information .climactual__iformacion-dos > div {
+        flex-direction: column;
+    }
+
+    .section--secundario .section__information 
+    > div {
+        flex-direction: column; 
+    }
+
+    
+    .section--terceario {
+        display: flex;
+        align-items: center;
+    }
+    .section--terceario .section__information .informacion {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 840px) {
+    .section {
+        grid-template-columns:repeat(1, 1fr)
+    }
+
+    .section--principal .section__information {
+        margin-bottom: 20px;
+    }
+    .section--principal .section__information .climactual__iformacion-dos {
+        align-items: normal;
+    }
+    .section--principal .section__information .climactual__iformacion-dos > div {
+        flex-direction: row;
+    }
+
+    .section--secundario .section__information 
+    > div {
+        margin-bottom: 20px;
+        flex-direction: row;
+    }
+
+    .section--terceario .section__information .informacion {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 550px) {
+    .section--principal .section__information > div:nth-child(2) {
+        flex-direction: column;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .section--principal .section__information .climactual__iformacion-dos {
+        align-items: center;
+    }
+    .section--principal .section__information .climactual__iformacion-dos > div {
+        flex-direction: column;
+    }
+
+    .section--secundario .section__information 
+    > div {
+        flex-direction: column;
+    }
+    .section--terceario .section__information .informacion {
+        display: flex;
+        justify-content: center;
+    }
+    .section--terceario .section__information .informacion > div {
+        flex-direction: column;
+    }
+}

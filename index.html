@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima</title>
+    <link rel="stylesheet" href="./src/styles/style.css">
+    <link rel="shortcut icon" href="./public/3721881.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="header">
+        <div>
+            <h1 class="header__title">
+                Predicción Meteorologica
+            </h1>
+            <form id="form-submit" class="form">
+                <div class="form__input">
+                    <label for="form-ciudad" class="form__label">Nombre de la Ciudad : </label>
+                    <input type="text" class="form__input-text" id="form-ciudad" placeholder="Ciudad">
+                </div>
+    
+                <div class="form__input">
+                    <label for="form-pais" class="form__label">Abrebiatura del Pais : </label>
+                    <input type="text" class="form__input-text" id="form-pais" placeholder="Ejemplo:  Peru: PE, Argentina: AR, Mexico: MX">
+                </div>
+    
+                <div class="form__input">
+                    <input type="submit" class="form__input-submit" id="submit-clima--submirçt" value="Buscar">
+                </div>
+    
+                <div class="form__message">
+                    <p class="form__message--error" id="msg-error"></p>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <main>
+
+
+        <div class="loader">
+            <img src="./src/assets/loader.svg" class="loader__image" alt="Loader" id="loader" />
+        </div>
+
+        
+        <div class="section">
+
+            <section id="result-city" class="section__get section--principal">
+
+            </section>
+
+            <section class="section__get section--secundario">
+                <button id="btnAnterior" class="section__button" disabled>
+                    <i class="fa-sharp fa-solid fa-angle-left"></i>
+                </button>
+
+                <div id="result-city-DOS" class="section__respuesta">
+                </div>
+
+                <button id="btnPosterior" class="section__button">
+                    <i class="fa-sharp fa-solid fa-angle-right"></i>
+                </button>
+            </section>
+
+            <section class="section__get section--terceario" id="sectionCordenadas">
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">
+        <i class="fa-solid fa-envelope"></i>
+        Johancanchary@gmail.com
+    </p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/889cbcbdf4.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./src/app.js" type="module"></script>
+
+</body>
+</html>
