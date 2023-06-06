@@ -1,4 +1,4 @@
-# Proyecto sobre predecciones Metereologicas
+# Proyecto sobre predecciones Metereologicas con JS
 
 El proyecto fue trabajado con la Api openweathermap, esta api nos brinda mucha informacion acerca de los datos metereologicos. 
 
